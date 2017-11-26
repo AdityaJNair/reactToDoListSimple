@@ -13,9 +13,12 @@ class TodoApp extends React.Component{
     this.state = {
       data: []
     }
+    console.log("initial state")
+        console.log(this.state)
   }
   // Add todo handler
   addTodo(val){
+    console.log("at")
     // Assemble data
     const todo = {text: val, id: window.id++}
     // Update data
@@ -26,6 +29,7 @@ class TodoApp extends React.Component{
   // Handle remove
   handleRemove(id){
     // Filter all todos except the one to be removed
+    console.log("hR")
     const remainder = this.state.data.filter((todo) => {
       if(todo.id !== id) return todo;
     });
@@ -41,7 +45,7 @@ class TodoApp extends React.Component{
         <TodoForm addTodo={this.addTodo.bind(this)}/>
         <TodoList
           todos={this.state.data}
-          remove={this.handleRemove.bind(this)}
+          removeFunc={this.handleRemove.bind(this)}
         />
       </div>
     );

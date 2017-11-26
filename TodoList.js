@@ -1,10 +1,9 @@
 import Todo from './Todo.js'
 
-const TodoList = ({todos, remove}) => {
+const TodoList = ({todos, removeFunc}) => {
   // Map through the todos
-  console.log(todos)
-  const todoNode = todos.map((todo) => {
-    return (<Todo todo={todo} key={todo.id} remove={remove}/>)
+  const todoNode = todos.map((obj) => {
+    return (<Todo todo={obj} key={obj.id} remove={removeFunc}/>)
   });
   return (<ul>{todoNode}</ul>);
 }

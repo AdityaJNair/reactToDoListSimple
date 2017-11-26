@@ -4,14 +4,9 @@ const TodoForm = ({addTodo}) => {
 
   return (
     <div>
-      <input ref={node => {
-        input = node;
-      }} />
-      <button onClick={() => {
-        addTodo(input.value);
-        input.value = '';
-      }}>
-        +
+      <input type="text" ref={node => {input = node;}} />
+      <button onClick={() => {addTodo(input.value); input.value = '';}}>
+        ADD
       </button>
     </div>
   );
